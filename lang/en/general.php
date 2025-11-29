@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'dashboard' => 'Dashboard',
+    'users' => 'Users',
+    'tracks' => 'Tracks',
+    'ads_boosts' => 'Ads & Boosts',
+    'track_trials' => 'Track Trials',
+    'themes' => 'Themes',
+    'languages' => 'Languages',
+    'settings' => 'Settings',
+    'back_to_site' => 'Back to Site',
+    'logout' => 'Logout',
+    'profile' => 'Profile',
+    'save' => 'Save',
+    'cancel' => 'Cancel',
+    'delete' => 'Delete',
+    'edit' => 'Edit',
+    'create' => 'Create',
+    'update' => 'Update',
+    'actions' => 'Actions',
+    'status' => 'Status',
+    'active' => 'Active',
+    'inactive' => 'Inactive',
+    'yes' => 'Yes',
+    'no' => 'No',
+];

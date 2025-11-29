@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DemoLimo Installer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: #0f0f13;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .lava-gradient {
+            background: linear-gradient(135deg, #DC2626 0%, #EA580C 100%);
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .step-active {
+            background: #DC2626;
+            color: white;
+            border-color: #DC2626;
+        }
+
+        .step-completed {
+            background: #10B981;
+            color: white;
+            border-color: #10B981;
+        }
+
+        .step-inactive {
+            background: transparent;
+            color: #6B7280;
+            border-color: #374151;
+        }
+    </style>
+</head>
+
+<body
+    class="min-h-screen flex items-center justify-center p-4 bg-[url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center bg-no-repeat relative">
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+    <div class="relative z-10 w-full max-w-4xl">
+
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-black text-white mb-2 tracking-tight">
+                <span class="text-transparent bg-clip-text lava-gradient">DemoLimo</span> Installer
+            </h1>
+            <p class="text-gray-400">Set up your music platform in minutes</p>
+        </div>
+
+        <div class="glass-panel rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[500px]">
+
+            <!-- Sidebar / Steps -->
+            <div class="w-full md:w-1/3 bg-black/40 p-8 border-r border-white/5">
+                <div class="space-y-8">
+                    <!-- Step 1: Requirements -->
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full border-2 step-completed flex items-center justify-center font-bold">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold">Requirements</h3>
+                            <p class="text-xs text-green-400">Passed</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Database -->
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full border-2 step-active flex items-center justify-center font-bold shadow-[0_0_15px_rgba(220,38,38,0.5)]">
+                            2
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold">Database</h3>
+                            <p class="text-xs text-red-400">In Progress</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Admin Setup -->
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full border-2 step-inactive flex items-center justify-center font-bold">
+                            3
+                        </div>
+                        <div>
+                            <h3 class="text-gray-500 font-bold">Admin Account</h3>
+                            <p class="text-xs text-gray-600">Pending</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Finish -->
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full border-2 step-inactive flex items-center justify-center font-bold">
+                            4
+                        </div>
+                        <div>
+                            <h3 class="text-gray-500 font-bold">Finish</h3>
+                            <p class="text-xs text-gray-600">Pending</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 p-4 bg-blue-500/10 rounded-xl border border-blue-500/20">
+                    <div class="flex gap-3">
+                        <i class="fas fa-info-circle text-blue-400 mt-1"></i>
+                        <p class="text-xs text-blue-200 leading-relaxed">
+                            Need help? Check out our <a href="#" class="underline hover:text-white">documentation</a>
+                            for installation guide.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="w-full md:w-2/3 p-8 md:p-12 flex flex-col">
+
+                <!-- Step Content: Database Configuration -->
+                <div class="flex-1">
+                    <h2 class="text-2xl font-bold text-white mb-6">Database Configuration</h2>
+
+                    <form class="space-y-5">
+                        <div class="grid grid-cols-2 gap-5">
+                            <div>
+                                <label
+                                    class="block text-xs font-medium text-gray-400 mb-1 uppercase tracking-wider">Database
+                                    Host</label>
+                                <input type="text" value="127.0.0.1"
+                                    class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none transition">
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-medium text-gray-400 mb-1 uppercase tracking-wider">Database
+                                    Port</label>
+                                <input type="text" value="3306"
+                                    class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label
+                                class="block text-xs font-medium text-gray-400 mb-1 uppercase tracking-wider">Database
+                                Name</label>
+                            <input type="text" placeholder="demolimo"
+                                class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none transition">
+                        </div>
+
+                        <div>
+                            <label
+                                class="block text-xs font-medium text-gray-400 mb-1 uppercase tracking-wider">Username</label>
+                            <input type="text" placeholder="root"
+                                class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none transition">
+                        </div>
+
+                        <div>
+                            <label
+                                class="block text-xs font-medium text-gray-400 mb-1 uppercase tracking-wider">Password</label>
+                            <input type="password" placeholder="••••••••"
+                                class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none transition">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Footer Actions -->
+                <div class="mt-8 pt-6 border-t border-white/10 flex justify-between items-center">
+                    <button class="text-gray-400 hover:text-white transition font-medium">
+                        <i class="fas fa-arrow-left mr-2"></i> Back
+                    </button>
+                    <button
+                        class="px-8 py-3 lava-gradient hover:brightness-110 text-white font-bold rounded-lg shadow-lg shadow-red-900/30 transition transform hover:-translate-y-0.5">
+                        Test Connection & Continue <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="text-center mt-6 text-gray-500 text-sm">
+            &copy; 2024 DemoLimo Installer. All rights reserved.
+        </div>
+    </div>
+
+</body>
+
+</html>

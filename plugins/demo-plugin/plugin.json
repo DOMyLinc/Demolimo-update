@@ -1,0 +1,38 @@
+{
+    "name": "Demo Plugin",
+    "slug": "demo-plugin",
+    "description": "A sample plugin demonstrating the plugin system capabilities",
+    "version": "1.0.0",
+    "author": "DemoLimo Team",
+    "author_url": "https://demolimo.com",
+    "plugin_url": "https://demolimo.com/plugins/demo-plugin",
+    "main_file": "plugin.php",
+    "requires": {
+        "php": ">=8.0",
+        "laravel": ">=10.0"
+    },
+    "hooks": [
+        {
+            "name": "user.registered",
+            "description": "Fires after a user successfully registers"
+        },
+        {
+            "name": "track.uploaded",
+            "description": "Fires after a track is uploaded"
+        }
+    ],
+    "settings": {
+        "welcome_message": {
+            "type": "text",
+            "label": "Welcome Message",
+            "default": "Welcome to our platform!",
+            "description": "Message shown to new users"
+        },
+        "enable_notifications": {
+            "type": "boolean",
+            "label": "Enable Notifications",
+            "default": true,
+            "description": "Send notifications for plugin events"
+        }
+    }
+}
